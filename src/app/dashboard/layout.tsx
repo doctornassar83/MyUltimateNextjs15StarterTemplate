@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { ThemeSwitcher } from '@/components/ui';
-import { useAuth, useAuthProtection } from '@/context/auth-context';
+import { UserButton } from '@clerk/nextjs';
 
 interface DashboardLayoutProps {
     children: React.ReactNode;
@@ -14,21 +14,9 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
     const pathname = usePathname();
-    const { isAuthenticated, user, isDemoMode } = useAuth();
-
-    // Protect this route
-    useAuthProtection();
 
     return (
         <div className='flex min-h-screen flex-col'>
-            {isDemoMode && (
-                <div className='border-b border-amber-200 bg-amber-50 px-6 py-2 text-sm text-amber-800 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-300'>
-                    <div className='container mx-auto flex items-center gap-2'>
-                        <span className='font-semibold'>🔓 Demo Mode</span>
-                        <span>You're using a simulated account for demonstration purposes</span>
-                    </div>
-                </div>
-            )}
             <header className='bg-background sticky top-0 z-50 border-b backdrop-blur-sm'>
                 <div className='flex h-16 items-center px-6'>
                     <h1 className='text-xl font-bold'>Dashboard</h1>
@@ -36,6 +24,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                         <div className='relative'>
                             <ThemeSwitcher />
                         </div>
+                        <UserButton afterSignOutUrl='/' />
                     </div>
                 </div>
             </header>
@@ -67,6 +56,11 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                             href='/dashboard/settings'
                             className={`rounded-md px-3 py-2 transition-colors ${pathname === '/dashboard/settings' ? 'bg-primary/10 text-primary' : 'hover:bg-muted'}`}>
                             Settings
+                        </a>
+                        <a
+                            href='/dashboard/profile'
+                            className={`rounded-md px-3 py-2 transition-colors ${pathname === '/dashboard/profile' ? 'bg-primary/10 text-primary' : 'hover:bg-muted'}`}>
+                            Profile
                         </a>
                     </nav>
                 </aside>

@@ -308,6 +308,28 @@ pnpm build
 
 > **Note**: Using npm or yarn may work, but we officially support and test with pnpm only.
 
+### 🔐 Authentication with Clerk
+
+This template uses [Clerk](https://clerk.com/) for authentication and user management:
+
+1. Create a Clerk account at [clerk.com](https://clerk.com/)
+2. Create a new application in the Clerk dashboard
+3. Configure your application URLs (development and production)
+4. Copy the API keys from Clerk dashboard
+5. Update your `.env.local` file with your Clerk API keys:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_your_publishable_key
+CLERK_SECRET_KEY=sk_test_your_secret_key
+```
+
+The authentication system provides:
+- Sign-in and sign-up pages
+- User profile management
+- Protected routes
+- Authentication state management
+- Social login options (configurable in Clerk dashboard)
+
 ---
 
 <p style="text-align: center;"> With ❤️ from 🇮🇳 </p>
