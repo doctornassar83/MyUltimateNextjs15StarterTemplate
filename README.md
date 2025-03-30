@@ -1,12 +1,12 @@
-# Next.js 15 Starter (shadcn) [[LIVE DEMO](https://nextjs-15-starter-shadcn.vercel.app/)]
+# Next.js 15 Enterprise Starter [[LIVE DEMO](https://nextjs-15-starter-shadcn.vercel.app/)]
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue) [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org) ![ESLint](https://img.shields.io/badge/code%20style-eslint-brightgreen) ![GitHub stars](https://img.shields.io/github/stars/siddharthamaity/nextjs-15-starter-shadcn?style=social) ![GitHub forks](https://img.shields.io/github/forks/siddharthamaity/nextjs-15-starter-shadcn?style=social) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/siddharthamaity)
 
-*This is the Tailwind version for Next.js 15 Starter, you may be interested in other templates too -*
+*This is the enhanced version of Next.js 15 Starter with Shadcn UI. You may be interested in other templates too -*
 - [**Next.js 15 Starter Core**](https://github.com/SiddharthaMaity/nextjs-15-starter-core)
 - [**Next.js 15 Starter with Tailwind CSS**](https://github.com/SiddharthaMaity/nextjs-15-starter-tailwind)
 
-Welcome to the **Next.js 15 Starter** repository! This starter template is built with Next.js 15, React 19, TypeScript 5, Tailwind CSS 3, Shadcn UI and comes packed with several powerful tools and configurations to accelerate your project setup and streamline development workflows using VS Code.
+Welcome to the **Next.js 15 Enterprise Starter** repository! This starter template is built with Next.js 15, React 19, TypeScript 5, Tailwind CSS 4, Shadcn UI and comes packed with several powerful tools and configurations to accelerate your project setup and streamline development workflows.
 
 ![Next.js 15 Starter Shadcn](public/images/screenshot1.png)
 
@@ -14,18 +14,50 @@ Welcome to the **Next.js 15 Starter** repository! This starter template is built
 
 ## 🚀 What's Included
 
-- **Next.js 15**
-- **React 19**
-- **TypeScript 5**
-- **ESLint 9**
-- **Prettier 3**
-- **Tailwind CSS 4**
-- **Shadcn UI**
-- **App Directory**
-- **System, Light & Dark Mode**
-- **Next.js Bundle Analyzer**
+- **Next.js 15** with App Router
+- **React 19** with latest features
+- **TypeScript 5** for type safety
+- **ESLint 9** for code quality
+- **Prettier 3** for code formatting
+- **Tailwind CSS 4** for styling
+- **Shadcn UI** for beautiful components
+- **Theme Switching** (Light, Dark, System) with persistent settings
+- **Next.js Bundle Analyzer** for optimization
+- **Authentication System** with protected routes
+- **Advanced Todo Components** showcasing state management patterns
+- **Context API Examples** for global state management
+- **Custom Hooks** for reusable logic
 - **Dockerfile** with Node.js 22.14.0 (Alpine)
 - **Dockerfile.bun** with Bun 1.2.7 (Alpine)
+
+### 🎨 Theming System
+
+This starter includes a robust theming system with:
+
+- **ThemeSwitcher Component** - Accessible UI to toggle between themes
+- **Theme Context** - Global theme state with React Context API
+- **Theme Provider** - Integration with next-themes for SSR compatibility
+- **Persistent Preferences** - User theme choice saved to localStorage
+- **System Detection** - Automatically matches system preferences
+- **CSS Variables** - Tailwind CSS integration with CSS variables for theming
+- **Dark Mode Support** - All components designed for both light and dark modes
+
+### 🔄 State Management Patterns
+
+This starter includes multiple state management patterns for different use cases:
+
+1. **React Hooks** - Local component state using `useState` and `useReducer`
+2. **Custom Hooks** - Reusable logic with our `useTodos` hook
+3. **Context API** - Global state with `TodoContext` for app-wide state
+
+### 🧩 Featured Components
+
+- **TodoDemo** - Basic todo component using local state
+- **TodoApp** - Advanced todo app with filtering, localStorage persistence, and Context API
+- **Dashboard** - Admin dashboard with statistics and activity feed
+- **Login/Register** - Authentication forms with form validation
+- **ThemeSwitcher** - Toggle between light, dark, and system themes
+- **Theme Provider** - Context provider for theme management
 
 ### 🛠️ ESLint Plugins
 
@@ -64,13 +96,12 @@ To enhance development experience, install the following VS Code extensions:
 - [**Visual Studio Code Commitizen Support**](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen)
 - [**Markdown All in One**](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 
-
 ## 🏁 Getting Started
 
 ### Prerequisites
 
-- **Bun**: Version 1.2.7 or higher OR
 - **Node.js**: Version 20.18.0 or higher
+- **PNPM**: Version 10.7.0 or higher (recommended)
 - **Docker**: For containerized deployment (optional but recommended)
 
 ### Installation
@@ -87,36 +118,97 @@ To enhance development experience, install the following VS Code extensions:
 
 2. **Install Dependencies**:
     ```bash
-    npm install
-    # or with Yarn
-    yarn install
-    # or with pnpm
+    # Recommended: use PNPM (faster, disk efficient)
     pnpm install
-    # or with Bun
+    
+    # Alternative package managers
+    npm install
+    yarn install
     bun install
     ```
 
 3. **Run Development Server**:
     ```bash
-    npm run dev
-    # or with Yarn
-    yarn dev
-    # or with pnpm
+    # Standard development server with PNPM (recommended)
     pnpm dev
-    # or with Bun
+    
+    # With Turbopack for faster development
+    pnpm dev:turbo
+    
+    # Or using other package managers
+    npm run dev
+    yarn dev
     bun dev
     ```
 
 4. **Build for Production**:
     ```bash
-    npm run build
-    # or with Yarn
-    yarn build
-    # or with pnpm
+    # Using PNPM (recommended)
     pnpm build
-    # or with Bun
+    
+    # Alternative package managers
+    npm run build
+    yarn build
     bun run build
     ```
+
+### 🎨 Using the Theme Switcher
+
+This template includes a built-in theme switching component:
+
+1. **Location**: The ThemeSwitcher is prominently placed in both the main layout and dashboard header
+2. **Options**: Choose between Light, Dark, and System themes
+3. **Persistence**: Your theme choice is automatically saved to localStorage
+4. **System Match**: The "System" option automatically syncs with your OS preference
+5. **Component Reuse**: Import the ThemeSwitcher component in your own layouts:
+   ```tsx
+   import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+   
+   // Then in your JSX
+   <ThemeSwitcher />
+   ```
+
+### 🧪 Exploring the Todo Examples
+
+This template includes two Todo implementations that showcase different state management patterns:
+
+1. **Basic Todo** (`/dashboard/todos`): Simple component using React hooks for local state.
+2. **Advanced Todo** (`/dashboard/advanced-todo`): Enhanced implementation with Context API, localStorage persistence, and filtering.
+
+These components demonstrate best practices for:
+- Form handling
+- List rendering
+- State management
+- Custom hooks
+- Context API usage
+- Conditional rendering
+- Accessibility
+
+### 🔍 Project Structure
+
+```
+src/
+├── app/                   # Next.js App Router
+│   ├── dashboard/         # Dashboard pages
+│   ├── login/             # Authentication pages
+│   ├── register/          # User registration
+│   └── page.tsx           # Landing page
+├── components/            # Reusable components
+│   ├── Todo.tsx           # Basic Todo component
+│   ├── TodoApp.tsx        # Advanced Todo with context
+│   └── ThemeSwitcher.tsx  # Theme toggle component
+├── context/               # React Context providers
+│   ├── auth-context.tsx   # Authentication context
+│   └── todo-context.tsx   # Todo state management context
+├── hooks/                 # Custom React hooks
+│   └── useTodos.ts        # Todo state management hook
+├── providers/             # Provider components
+│   ├── index.tsx          # Combined providers
+│   └── theme-provider.tsx # Theme management
+├── services/              # API and service logic
+├── types/                 # TypeScript type definitions
+└── utils/                 # Utility functions
+```
 
 ### 🐳 Docker Setup
 
@@ -148,9 +240,47 @@ docker run -p 3000:3000 nextjs-starter-shadcn
 
 [![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/SiddharthaMaity/nextjs-15-starter-shadcn)
 
+## 🛠️ Advanced Configuration
+
+### Turbopack Support
+
+This template supports both standard Webpack and Turbopack:
+
+```bash
+# Use standard webpack (more stable)
+pnpm dev
+
+# Use Turbopack (faster development)
+pnpm dev:turbo
+```
+
+Configuration for Turbopack is included in both `next.config.ts` and `turbo.json`.
+
+### Bundle Analysis
+
+Analyze your bundle size with:
+
+```bash
+BUNDLE_ANALYZER_ENABLED=true pnpm build
+```
+
 ### License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## 📚 Advanced Guide
+
+For more advanced usage and extension options, check out our [Advanced Guide](ADVANCED_GUIDE.md) which covers:
+
+- **Adding a Database** - Prisma, MongoDB, Supabase, Firebase
+- **Authentication Integration** - NextAuth.js v5
+- **Advanced Styling** - TailwindCSS v4, Custom Design Systems
+- **Testing Strategy** - Vitest, Playwright
+- **Performance Optimization** - Bundle Analysis, Image Optimization
+- **Deployment Options** - Vercel, Docker
+- **Security Enhancements** - CSP, Rate Limiting
+- **Internationalization** - Multi-language support
+- **Analytics and Monitoring** - OpenTelemetry, Web Vitals
 
 ---
 
