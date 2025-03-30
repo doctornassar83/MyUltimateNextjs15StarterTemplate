@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 
-import { SimplifiedThemeSwitcher } from '@/components/SimplifiedThemeSwitcher';
+import { ThemeSwitcher } from '@/components/ui';
 import { useAuth } from '@/context/auth-context';
 
 import { Zap } from 'lucide-react';
@@ -34,7 +34,7 @@ export function Header() {
                 </nav>
                 <div className='flex items-center space-x-4'>
                     <div className='relative'>
-                        <SimplifiedThemeSwitcher />
+                        <ThemeSwitcher />
                     </div>
                     <button
                         type='button'
