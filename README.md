@@ -1,10 +1,10 @@
 # Next.js 15 Enterprise Starter [[LIVE DEMO](https://nextjs-15-starter-shadcn.vercel.app/)]
 
-![MIT License](https://img.shields.io/badge/license-MIT-blue) [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org) ![ESLint](https://img.shields.io/badge/code%20style-eslint-brightgreen) ![GitHub stars](https://img.shields.io/github/stars/siddharthamaity/nextjs-15-starter-shadcn?style=social) ![GitHub forks](https://img.shields.io/github/forks/siddharthamaity/nextjs-15-starter-shadcn?style=social) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/siddharthamaity)
+![MIT License](https://img.shields.io/badge/license-MIT-blue) [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org) ![ESLint](https://img.shields.io/badge/code%20style-eslint-brightgreen) ![GitHub stars](https://img.shields.io/github/stars/doctornassar83/MyUltimateNextjs15StarterTemplate?style=social) ![GitHub forks](https://img.shields.io/github/forks/doctornassar83/MyUltimateNextjs15StarterTemplate?style=social) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/doctornassar83)
 
 *This is the enhanced version of Next.js 15 Starter with Shadcn UI. You may be interested in other templates too -*
-- [**Next.js 15 Starter Core**](https://github.com/SiddharthaMaity/nextjs-15-starter-core)
-- [**Next.js 15 Starter with Tailwind CSS**](https://github.com/SiddharthaMaity/nextjs-15-starter-tailwind)
+- [**Next.js 15 Starter Core**](https://github.com/doctornassar83/MyUltimateNextjs15StarterTemplate)
+- [**Next.js 15 Starter with Tailwind CSS**](https://github.com/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
 Welcome to the **Next.js 15 Enterprise Starter** repository! This starter template is built with Next.js 15, React 19, TypeScript 5, Tailwind CSS 4, Shadcn UI and comes packed with several powerful tools and configurations to accelerate your project setup and streamline development workflows.
 
@@ -21,14 +21,51 @@ Welcome to the **Next.js 15 Enterprise Starter** repository! This starter templa
 - **Prettier 3** for code formatting
 - **Tailwind CSS 4** for styling
 - **Shadcn UI** for beautiful components
+- **Enhanced Color Palette** with vibrant gradients and animations
 - **Theme Switching** (Light, Dark, System) with persistent settings
+- **Server Components** for improved performance and reduced client-side JavaScript
+- **Next.js Image Optimization** for enhanced performance and user experience
+- **Storybook Integration** for component development and documentation
+- **API Route Examples** with proper error handling for different HTTP methods
+- **Accessibility Features** including accessibility testing panel and guide
 - **Next.js Bundle Analyzer** for optimization
 - **Authentication System with Clerk** for secure user management
 - **Advanced Todo Components** showcasing state management patterns
 - **Context API Examples** for global state management
 - **Custom Hooks** for reusable logic
+- **Optimized Project Structure** with clean organization
 - **Dockerfile** with Node.js 22.14.0 (Alpine)
 - **Dockerfile.bun** with Bun 1.2.7 (Alpine)
+
+### 🔄 Recent Enhancements
+
+This template has been recently upgraded with the following enhancements:
+
+1. **Breathtaking UI Design**: Completely revamped color scheme with vibrant gradients, smooth animations, and enhanced visual elements.
+
+2. **Optimized Project Structure**: Reorganized components for better maintainability, separated demo components from production code.
+
+3. **Server Components**: More components converted to React Server Components, reducing client-side JavaScript and improving performance.
+
+4. **Image Optimization**: Enhanced image optimization using Next.js Image component with proper sizing, quality settings, and loading attributes.
+
+5. **Storybook Integration**: Added Storybook for better component development, documentation, and visual testing.
+
+6. **API Route Examples**: Implemented comprehensive API routes with proper error handling, validation, and a demo page showcasing different HTTP methods.
+
+7. **Accessibility Improvements**: Added AccessibilityInfo component and accessibility guide to improve the overall accessibility of the template.
+
+### 🎨 Enhanced Visual Design
+
+The template features a professionally designed UI with:
+
+- **Vibrant Color Scheme**: Using OKLCH color space for wider gamut and better color transitions
+- **Animated Backgrounds**: Subtle floating animations and gradients for visual interest
+- **Responsive Design**: Optimized for all device sizes from mobile to desktop
+- **Micro-interactions**: Subtle animations on hover, click, and page transitions
+- **Consistent Typography**: Type scale and font pairing for improved readability
+- **Beautiful Gradients**: Eye-catching gradient backgrounds and text effects
+- **Modern UI Elements**: Cards, buttons, and forms with drop shadows and rounded corners
 
 ### 🎨 Theming System
 
@@ -108,8 +145,8 @@ To enhance development experience, install the following VS Code extensions:
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/siddharthamaity/nextjs-15-starter-shadcn.git
-    cd nextjs-15-starter-shadcn
+    git clone https://github.com/doctornassar83/MyUltimateNextjs15StarterTemplate.git
+    cd MyUltimateNextjs15StarterTemplate
     ```
     To get the code without example change branch to without-example
     ```bash
@@ -162,7 +199,7 @@ This template includes a built-in theme switching component:
 4. **System Match**: The "System" option automatically syncs with your OS preference
 5. **Component Reuse**: Import the ThemeSwitcher component in your own layouts:
    ```tsx
-   import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+   import { ThemeSwitcher } from '@/components/ui/ThemeSwitcher';
    
    // Then in your JSX
    <ThemeSwitcher />
@@ -184,7 +221,7 @@ These components demonstrate best practices for:
 - Conditional rendering
 - Accessibility
 
-### 🔍 Project Structure
+### 🔍 Optimized Project Structure
 
 ```
 src/
@@ -194,8 +231,10 @@ src/
 │   ├── register/          # User registration
 │   └── page.tsx           # Landing page
 ├── components/            # Reusable components
-│   ├── Todo.tsx           # Basic Todo component
-│   ├── TodoApp.tsx        # Advanced Todo with context
+│   ├── demos/             # Demo components for reference
+│   ├── landing/           # Landing page components
+│   ├── todo/              # Todo application components
+│   ├── ui/                # Core UI components
 │   └── ThemeSwitcher.tsx  # Theme toggle component
 ├── context/               # React Context providers
 │   ├── auth-context.tsx   # Authentication context
@@ -224,21 +263,21 @@ docker run -p 3000:3000 nextjs-starter-shadcn
 
 ### ☁ Try it in the Cloud
 
-[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
-[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-blue?logo=github)](https://codespaces.new/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-blue?logo=github)](https://codespaces.new/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
-[![Open in Repl.it](https://replit.com/badge/github/SiddharthaMaity/nextjs-15-starter-shadcn)](https://replit.com/github/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in Repl.it](https://replit.com/badge/github/doctornassar83/MyUltimateNextjs15StarterTemplate)](https://replit.com/github/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
-[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
-[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/SiddharthaMaity/nextjs-15-starter-shadcn)
+[![Open in Codeanywhere](https://codeanywhere.com/img/open-in-codeanywhere-btn.svg)](https://app.codeanywhere.com/#https://github.com/doctornassar83/MyUltimateNextjs15StarterTemplate)
 
 ## 🛠️ Advanced Configuration
 

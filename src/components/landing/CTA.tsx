@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 
 import { ArrowRight, Github } from 'lucide-react';
@@ -16,15 +14,15 @@ export function CTA() {
                 <div className='flex flex-col justify-center gap-4 sm:flex-row'>
                     <Link
                         href='/register'
-                        className='group from-primary hover:shadow-primary/20 relative overflow-hidden rounded-md bg-gradient-to-r to-purple-600 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl'>
-                        <span className='relative z-10 flex items-center'>
+                        className='group relative inline-flex min-w-[160px] items-center justify-center overflow-visible rounded-md bg-gradient-to-r from-blue-500 to-purple-500 px-8 py-3 text-sm font-medium text-white shadow-lg transition-all hover:shadow-xl'>
+                        <span className='relative z-10 flex items-center whitespace-nowrap'>
                             Get Started
                             <ArrowRight size={16} className='ml-2 transition-transform group-hover:translate-x-1' />
                         </span>
-                        <span className='to-primary absolute inset-0 bg-gradient-to-r from-purple-600 opacity-0 transition-opacity group-hover:opacity-100' />
+                        <span className='absolute inset-0 rounded-md bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 transition-opacity group-hover:opacity-100' />
                     </Link>
                     <Link
-                        href='https://github.com/siddharthamaity/nextjs-15-starter-shadcn'
+                        href='https://github.com/doctornassar83/MyUltimateNextjs15StarterTemplate'
                         target='_blank'
                         className='bg-background/90 hover:bg-background flex items-center justify-center gap-2 rounded-md border px-8 py-3 text-sm font-medium backdrop-blur-sm transition-all hover:shadow-md'>
                         <Github size={16} />

@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { Benefits, CTA, Features, Footer, Header, Hero, Stats, Testimonials } from '@/components/landing';
+import { Benefits, CTA, Features, Footer, Header, Hero, Screenshots, Stats, Testimonials } from '@/components/landing';
 
 export default function HomePage() {
     const [isVisible, setIsVisible] = useState({
@@ -83,6 +83,9 @@ export default function HomePage() {
                 <div ref={statsRef}>
                     <Stats isVisible={isVisible.stats} />
                 </div>
+
+                {/* Screenshots Section - Optimized Images */}
+                <Screenshots />
 
                 {/* Testimonials Section */}
                 <div ref={testimonialsRef}>

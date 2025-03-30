@@ -56,15 +56,15 @@ export function Benefits({ isVisible }: BenefitsProps) {
                             className={`mt-12 transition-all delay-500 duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
                             <Link
                                 href='/register'
-                                className='group from-primary relative overflow-hidden rounded-md bg-gradient-to-r to-purple-600 px-6 py-3 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg'>
-                                <span className='relative z-10 flex items-center'>
+                                className='group relative inline-flex min-w-[180px] items-center justify-center overflow-visible rounded-md bg-gradient-to-r from-blue-500 to-purple-500 px-6 py-3 text-sm font-medium text-white shadow-md transition-all hover:shadow-lg'>
+                                <span className='relative z-10 flex items-center whitespace-nowrap'>
                                     Start Building Today
                                     <ArrowRight
                                         size={16}
                                         className='ml-2 transition-transform group-hover:translate-x-1'
                                     />
                                 </span>
-                                <span className='to-primary absolute inset-0 bg-gradient-to-r from-purple-600 opacity-0 transition-opacity group-hover:opacity-100' />
+                                <span className='absolute inset-0 rounded-md bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 transition-opacity group-hover:opacity-100' />
                             </Link>
                         </div>
                     </div>

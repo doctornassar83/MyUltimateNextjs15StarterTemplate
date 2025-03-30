@@ -6,3 +6,4 @@ export * from './Testimonials';
 export * from './CTA';
 export * from './Footer';
 export * from './Header';
+export * from './Screenshots';

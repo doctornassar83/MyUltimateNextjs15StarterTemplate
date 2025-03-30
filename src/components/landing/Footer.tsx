@@ -1,8 +1,6 @@
-'use client';
-
 import Link from 'next/link';
 
-import { Code, Github, Rocket, Terminal, Zap } from 'lucide-react';
+import { Code, Github, Rocket, Sparkles, Terminal } from 'lucide-react';
 
 export function Footer() {
     return (
@@ -11,9 +9,9 @@ export function Footer() {
                 <div className='grid gap-12 md:grid-cols-4'>
                     <div className='space-y-4'>
                         <div className='flex items-center gap-2'>
-                            <div className='from-primary/90 relative h-8 w-8 rounded-full bg-gradient-to-br to-purple-600 p-[2px]'>
+                            <div className='relative h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 p-[2px] shadow-lg'>
                                 <div className='bg-background flex h-full w-full items-center justify-center rounded-full'>
-                                    <Zap size={16} className='text-primary' />
+                                    <Sparkles size={16} className='text-blue-500' />
                                 </div>
                             </div>
                             <span className='text-xl font-bold'>Next.js 15 Enterprise</span>
@@ -24,7 +22,7 @@ export function Footer() {
                         </p>
                         <div className='flex space-x-4'>
                             <a
-                                href='https://github.com/siddharthamaity/nextjs-15-starter-shadcn'
+                                href='https://github.com/doctornassar83/MyUltimateNextjs15StarterTemplate'
                                 className='text-muted-foreground hover:text-primary transition-colors'>
                                 <Github size={20} />
                             </a>

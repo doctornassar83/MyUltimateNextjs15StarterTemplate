@@ -36,8 +36,15 @@ export const metadata: Metadata = {
     },
     manifest: '/site.webmanifest',
     icons: {
-        icon: '/favicon.ico',
-        apple: '/apple-touch-icon.png'
+        icon: [
+            { url: '/favicons/favicon.ico', sizes: 'any' },
+            { url: '/favicons/favicon.svg', type: 'image/svg+xml' }
+        ],
+        apple: [{ url: '/favicons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
+        other: [
+            { url: '/favicons/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
+            { url: '/favicons/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' }
+        ]
     },
     openGraph: {
         type: 'website',
@@ -45,20 +52,29 @@ export const metadata: Metadata = {
         url: config.app.url,
         title: config.app.name,
         description: config.app.description,
-        siteName: config.app.name
+        siteName: config.app.name,
+        images: [
+            {
+                url: `${config.app.url}/og-image.jpg`,
+                width: 1200,
+                height: 630,
+                alt: config.app.name
+            }
+        ]
     },
     twitter: {
         card: 'summary_large_image',
         title: config.app.name,
-        description: config.app.description
+        description: config.app.description,
+        images: [`${config.app.url}/og-image.jpg`]
     }
 };
 
 // Viewport configuration
 export const viewport: Viewport = {
     themeColor: [
-        { media: '(prefers-color-scheme: light)', color: 'white' },
-        { media: '(prefers-color-scheme: dark)', color: 'black' }
+        { media: '(prefers-color-scheme: light)', color: '#6366F1' },
+        { media: '(prefers-color-scheme: dark)', color: '#8B5CF6' }
     ],
     width: 'device-width',
     initialScale: 1,
@@ -67,12 +83,13 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
     return (
-        <html lang='en' suppressHydrationWarning>
-            <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
-                <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+        <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
+            <html lang='en' suppressHydrationWarning>
+                <body
+                    className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
                     <Providers>{children}</Providers>
-                </ClerkProvider>
-            </body>
-        </html>
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }

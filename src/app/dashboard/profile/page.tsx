@@ -2,10 +2,6 @@
 
 import { UserProfile } from '@clerk/nextjs';
 
-export const metadata = {
-    title: 'Profile'
-};
-
 export default function ProfilePage() {
     return (
         <div className='space-y-6'>
