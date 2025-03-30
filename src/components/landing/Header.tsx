@@ -28,9 +28,6 @@ export function Header() {
                     <Link href='#about' className='hover:text-primary text-sm font-medium transition-colors'>
                         About
                     </Link>
-                    <Link href='/theme-test' className='hover:text-primary text-sm font-medium transition-colors'>
-                        Theme Test
-                    </Link>
                 </nav>
                 <div className='flex items-center space-x-4'>
                     <div className='relative'>

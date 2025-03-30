@@ -59,11 +59,6 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                             className={`rounded-md px-3 py-2 transition-colors ${pathname === '/dashboard/settings' ? 'bg-primary/10 text-primary' : 'hover:bg-muted'}`}>
                             Settings
                         </a>
-                        <a
-                            href='/theme-test'
-                            className={`rounded-md px-3 py-2 transition-colors ${pathname === '/theme-test' ? 'bg-primary/10 text-primary' : 'hover:bg-muted'}`}>
-                            Theme Test
-                        </a>
                     </nav>
                 </aside>
 
