@@ -138,7 +138,7 @@ export function FormsDemo() {
                                                 className='size-3.5 rounded-full'
                                                 style={{
                                                     backgroundColor:
-                                                        themes[theme as keyof typeof themes]['light']['--primary']
+                                                        themes[theme as keyof typeof themes].light['--primary']
                                                 }}
                                             />
                                             {theme}
