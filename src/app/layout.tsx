@@ -69,7 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
     return (
         <html lang='en' suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
-                <ClerkProvider>
+                <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}>
                     <Providers>{children}</Providers>
                 </ClerkProvider>
             </body>
