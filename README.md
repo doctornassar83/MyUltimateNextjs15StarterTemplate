@@ -23,7 +23,7 @@ Welcome to the **Next.js 15 Enterprise Starter** repository! This starter templa
 - **Shadcn UI** for beautiful components
 - **Theme Switching** (Light, Dark, System) with persistent settings
 - **Next.js Bundle Analyzer** for optimization
-- **Authentication System** with protected routes
+- **Authentication System with Clerk** for secure user management
 - **Advanced Todo Components** showcasing state management patterns
 - **Context API Examples** for global state management
 - **Custom Hooks** for reusable logic
@@ -316,7 +316,8 @@ This template uses [Clerk](https://clerk.com/) for authentication and user manag
 2. Create a new application in the Clerk dashboard
 3. Configure your application URLs (development and production)
 4. Copy the API keys from Clerk dashboard
-5. Update your `.env.local` file with your Clerk API keys:
+5. Create an `.env.local` file based on the provided `.env.example` template
+6. Add your Clerk API keys to the `.env.local` file:
 
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_your_publishable_key
@@ -326,9 +327,11 @@ CLERK_SECRET_KEY=sk_test_your_secret_key
 The authentication system provides:
 - Sign-in and sign-up pages
 - User profile management
-- Protected routes
+- Protected routes (dashboard and related pages)
 - Authentication state management
 - Social login options (configurable in Clerk dashboard)
+
+> **Note**: The middleware in `src/middleware.ts` handles route protection using Clerk.
 
 ---
 
