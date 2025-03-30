@@ -8,7 +8,7 @@ import { useAuth } from '@/context/auth-context';
 import { Zap } from 'lucide-react';
 
 export function Header() {
-    const { bypassAuth } = useAuth();
+    const { enableDemoMode, isDemoMode } = useAuth();
 
     return (
         <header className='bg-background/80 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur'>
@@ -35,9 +35,9 @@ export function Header() {
                     </div>
                     <button
                         type='button'
-                        onClick={bypassAuth}
+                        onClick={enableDemoMode}
                         className='rounded-md bg-gradient-to-r from-green-500 to-emerald-600 px-3 py-2 text-sm text-white transition-all hover:from-green-600 hover:to-emerald-700 hover:shadow-md'>
-                        Demo Access
+                        {isDemoMode ? 'Demo Active' : 'Demo Access'}
                     </button>
                     <Link href='/login' className='hover:text-primary text-sm font-medium transition-colors'>
                         Login
