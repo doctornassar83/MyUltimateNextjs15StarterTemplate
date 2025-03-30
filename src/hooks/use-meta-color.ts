@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/providers';
 
 export const META_THEME_COLORS = {
     light: '#ffffff',

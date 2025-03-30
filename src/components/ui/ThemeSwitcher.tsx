@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/providers';
 
 import { Laptop, Moon, Sun } from 'lucide-react';
 
@@ -15,7 +15,7 @@ import { Laptop, Moon, Sun } from 'lucide-react';
  * @returns A theme switching button group
  */
 export function ThemeSwitcher() {
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme, themes } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     // useEffect to avoid hydration mismatch

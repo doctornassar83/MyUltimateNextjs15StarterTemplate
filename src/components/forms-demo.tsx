@@ -1,9 +1,9 @@
 'use client';
 
 import * as React from 'react';
+import { useState } from 'react';
 
-import { useTheme } from 'next-themes';
-
+import { useTheme } from '@/providers';
 import { Button } from '@/registry/new-york-v4/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/registry/new-york-v4/ui/card';
 import { Checkbox } from '@/registry/new-york-v4/ui/checkbox';
@@ -12,6 +12,10 @@ import { Label } from '@/registry/new-york-v4/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/registry/new-york-v4/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/registry/new-york-v4/ui/select';
 import { Textarea } from '@/registry/new-york-v4/ui/textarea';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 const plans = [
     {

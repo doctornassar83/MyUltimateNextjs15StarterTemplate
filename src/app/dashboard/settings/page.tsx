@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { useTheme } from 'next-themes';
+import { useTheme } from '@/providers';
 
 import { Bell, CreditCard, Laptop, Moon, Save, Sun, User } from 'lucide-react';
 
