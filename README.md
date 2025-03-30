@@ -282,6 +282,32 @@ For more advanced usage and extension options, check out our [Advanced Guide](AD
 - **Internationalization** - Multi-language support
 - **Analytics and Monitoring** - OpenTelemetry, Web Vitals
 
+### Package Management
+
+This project uses **pnpm** as the primary package manager. We've standardized on pnpm to ensure consistent installations and dependency resolution.
+
+To install dependencies:
+```bash
+# Install pnpm if you don't have it yet
+npm install -g pnpm
+
+# Install dependencies
+pnpm install
+```
+
+If you encounter issues with multiple lock files, ensure you're using only pnpm:
+```bash
+# Remove other lock files if present
+rm -f package-lock.json yarn.lock
+
+# Use pnpm for all operations
+pnpm install
+pnpm dev
+pnpm build
+```
+
+> **Note**: Using npm or yarn may work, but we officially support and test with pnpm only.
+
 ---
 
 <p style="text-align: center;"> With ❤️ from 🇮🇳 </p>
